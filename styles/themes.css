@@ -4,3 +4,44 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+:root.theme-light {
+  --page-block-padding: 102px;
+  --page-bkg: #FFFFFF;
+  --grid-gradient-color: #d3d3d3;
+  --grid-gradient-width: 2px;
+  --gradient-start-color: #E7E7E7;
+  --gradient-end-color: #1A1A1A;
+  --page-bkg-img: repeating-linear-gradient(var(--grid-gradient-color) 0 var(--grid-gradient-width), transparent var(--grid-gradient-width) calc(var(--grid-gradient-width) * 2)),
+    repeating-linear-gradient(to right, var(--grid-gradient-color) 0 var(--grid-gradient-width), transparent var(--grid-gradient-width) calc(var(--grid-gradient-width) * 2)),
+    linear-gradient(to bottom, var(--gradient-start-color) 0%, var(--gradient-end-color) 100%);
+  --header-padding-block-start: 120px;
+  --logo-fs: 49px;
+  --font-color: #000000;
+}
+
+@media (min-width: 768px) {
+  :root.theme-light {
+    --logo-fs: 65px;
+    --header-padding-block-start: 136px;
+  }
+}
+
+:root.theme-dark {
+  --page-bkg: #000000;
+  --grid-gradient-color: #000;
+  --grid-gradient-width: 2px;
+  --gradient-start-color: #007f0c;
+  --gradient-end-color: #004306;
+  --font-color: #00CC14;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page-bkg: #000000;
+    --grid-gradient-color: #000;
+    --grid-gradient-width: 2px;
+    --gradient-start-color: #007f0c;
+    --gradient-end-color: #004306;
+    --font-color: #00CC14;
+  }
+}
