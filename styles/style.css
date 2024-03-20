@@ -131,5 +131,5 @@
 }
 
 .content__item:nth-of-type(8) .content__item-img {
-  filter: hue-rotate(77deg) blur(1px) brightness(110%) invert(0.2);
+  filter: hue-rotate(78deg) blur(2px) brightness(110%) invert(0) contrast(0.5) saturate(1.4) sepia(20%);
 }
