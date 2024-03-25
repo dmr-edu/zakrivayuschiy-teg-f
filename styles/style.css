@@ -267,6 +267,7 @@ svg {
   width: min(90%, 375px);
   padding: 30px clamp(30px, 50px - 2vw, 42px);
   background-color: var(--page-bkg);
+  border: var(--border)
 }
 
 .dialog::backdrop {
