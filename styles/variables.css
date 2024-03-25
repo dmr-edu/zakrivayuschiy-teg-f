@@ -23,7 +23,7 @@
   --focus-time: 0.3s;
   --fill_animation-color: white;
   --focus-transition: all var(--focus-time);
-  --img-stroke: rgb(255 255 255 /0.7);
+  --img-stroke: white;
   --heart-contour-color: var(--font-color);
   --heart-fill-color: var(--font-color);
   --heart-main-color: #FF0000;
