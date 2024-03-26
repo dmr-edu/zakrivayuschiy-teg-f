@@ -22,7 +22,10 @@
   --card-info-gap: 25px;
   --focus-time: 0.3s;
   --fill_animation-color: white;
+  --heart-transition-duration: 0.3s;
+  --heart-transition-timing: linear;
   --focus-transition: all var(--focus-time);
+  --heart-transition: all var(--heart-transition-duration) var(--heart-transition-timing);
   --img-stroke: white;
   --heart-contour-color: var(--font-color);
   --heart-fill-color: var(--font-color);

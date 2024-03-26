@@ -13,6 +13,78 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
 
+
+
+/* Heart SVG */
+
+.sparks {
+  opacity: 0
+}
+
+.core {
+  fill: var(--heart-fill-color);
+  transition: var(--heart-transition);
+  transition-delay: 0.03s;
+  opacity: 0
+}
+
+.main-body {
+  fill: var(--heart-fill-color);
+  transition: var(--heart-transition);
+  transition-delay: 0;
+  opacity: 0;
+}
+
+.contour {
+  --heart-transition-duration: 0.1;
+  transition: var(--heart-transition);
+}
+
+/* hover, active and is_liked */
+
+.like-icon:hover .core,
+.like-icon:active .core,
+.like-icon.is-liked .core {
+  transition-delay: 0;
+  opacity: 1;
+}
+
+.like-icon:hover .main-body,
+.like-icon:active .main-body,
+.like-icon.is-liked .main-body {
+  transition-delay: 0.05s;
+  opacity: 1;
+}
+
+/* define color for active state */
+
+.like-icon:active .core,
+.like-icon:active .main-body {
+  --heart-fill-color: var(--heart-main-color)
+}
+
+/* define color for is_liked state */
+
+.like-icon.is-liked .core,
+.like-icon.is-liked .main-body {
+  --heart-fill-color: var(--heart-main-color);
+}
+
+.like-icon.is-liked .contour {
+  --heart-contour-color: var(--heart-main-color);
+  --heart-transition-duration: 0.3s;
+  transition-delay: 0.06s;
+  opacity: 1;
+}
+
+.like-icon.is-liked {
+  animation: scale 0.3s ease-in 0.1s alternate;
+}
+
+.like-icon.is-liked .sparks {
+  animation: flash 0.3s ease-in 0.3s alternate;
+}
+
 @keyframes move {
   from {
     left: -4px;

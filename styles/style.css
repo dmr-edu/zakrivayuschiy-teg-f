@@ -114,7 +114,7 @@
 }
 
 .theme-menu__button[disabled=true] {
-  opacity: .5;
+  opacity: .6;
 }
 
 .content {
@@ -136,7 +136,6 @@
   background-color: var(--page-bkg);
   font-size: 18px;
   border: var(--border);
-  overflow: hidden;
 }
 
 .card__icon-button {
@@ -146,7 +145,7 @@
 }
 
 .card__icon-button:focus-visible {
-  border: 2px solid var(--font-color)
+  border: 2px solid var(--font-color);
 }
 
 .card__item-control {
@@ -165,7 +164,7 @@
   transform: translateX(-100%);
   left: -4px;
   width: 16px;
-  animation: move 0.5s ease-in-out forwards infinite alternate;
+  animation: move 0.5s ease-in-out infinite alternate;
 }
 
 .card__item-title {
@@ -183,34 +182,35 @@
 .card__item-img {
   width: 100%;
   object-fit: cover;
+  object-position: center;
   aspect-ratio: 1/1;
 }
 
-.card__item:nth-of-type(2) .card__item-img {
+.filter-sepia-70 {
   filter: sepia(70%);
 }
 
-.card__item:nth-of-type(3) .card__item-img {
+.filter-saturate {
   filter: saturate(400%);
 }
 
-.card__item:nth-of-type(4) .card__item-img {
+.filter-hue-rotate {
   filter: hue-rotate(25deg);
 }
 
-.card__item:nth-of-type(5) .card__item-img {
+.filter-invert {
   filter: invert(80%);
 }
 
-.card__item:nth-of-type(6) .card__item-img {
+.filter-sepia-80 {
   filter: sepia(80%);
 }
 
-.card__item:nth-of-type(7) .card__item-img {
+.filter-blur {
   filter: blur(10px);
 }
 
-.card__item:nth-of-type(8) .card__item-img {
+.filter-complex {
   filter: hue-rotate(78deg) blur(2px) brightness(110%) invert(0) contrast(0.5) saturate(1.4) sepia(20%);
 }
 
@@ -222,6 +222,7 @@
   font-family: var(--decorated-font);
   font-size: 14px;
   opacity: 0.5;
+  mix-blend-mode: hard-light;
   text-shadow:
     -1px 0 var(--img-stroke),
     1px 0 var(--img-stroke),
@@ -231,6 +232,7 @@
 
 @supports ((text-stroke: 1px var(--img-stroke)) or (-webkit-text-stroke: 1px var(--img-stroke))) {
   .card__item-img-title {
+    text-stroke: 1px var(--img-stroke);
     -webkit-text-stroke: 1px var(--img-stroke);
     text-shadow: none;
   }
@@ -305,6 +307,7 @@ svg {
   position: relative;
   overflow: hidden;
   background-color: var(--page-bkg);
+  transition: var(--focus-transition);
 }
 
 .fill__box:focus-visible {
@@ -329,71 +332,4 @@ svg {
 
 .fill__box:hover::before {
   translate: 0%;
-}
-
-
-/* Heart SVG */
-
-.sparks {
-  opacity: 0
-}
-
-.core {
-  fill: var(--heart-fill-color);
-  transition: all 0.3s;
-  transition-delay: 0.03s;
-  opacity: 0
-}
-
-.main-body {
-  fill: var(--heart-fill-color);
-  transition: all 0.3s;
-  transition-delay: 0;
-  opacity: 0;
-}
-
-.contour {
-  transition: all 0.1s ease-in;
-}
-
-/* hover */
-
-.like-icon:hover .core {
-  transition-delay: 0;
-  opacity: 1;
-}
-
-.like-icon:hover .main-body {
-  transition-delay: 0.1s;
-  opacity: 1;
-}
-
-/* active */
-
-.like-icon:active .core,
-.like-icon:active .main-body {
-  --heart-fill-color: var(--heart-main-color)
-}
-
-/* is liked */
-
-.like-icon.is-liked .core,
-.like-icon.is-liked .main-body {
-  --heart-fill-color: var(--heart-main-color);
-  opacity: 1;
-}
-
-.like-icon.is-liked .contour {
-  --heart-contour-color: var(--heart-main-color);
-  transition-duration: 0.3s;
-  transition-delay: 0.06s;
-  opacity: 1;
-}
-
-.like-icon.is-liked {
-  animation: scale 0.3s ease-in 0.1s;
-}
-
-.like-icon.is-liked .sparks {
-  animation: flash 0.3s ease-in 0.3s backwards;
 }
