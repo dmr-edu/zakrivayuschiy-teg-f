@@ -3,6 +3,7 @@
 :root {
   --page-block-padding: 102px;
   --page-bkg: #FFFFFF;
+  --page-fs: 18px;
   --grid-gradient-color: #d3d3d3;
   --grid-gradient-width: 2px;
   --gradient-start-color: #E7E7E7;
@@ -19,6 +20,7 @@
   --border: 2px solid var(--border-color);
   --main-font: 'Inter', Arial, Helvetica, sans-serif;
   --decorated-font: 'Press Start 2P', Arial, Helvetica, sans-serif;
+  --list-gap: 52px;
   --card-info-gap: 25px;
   --focus-time: 0.3s;
   --fill_animation-color: white;
@@ -31,4 +33,5 @@
   --heart-fill-color: var(--font-color);
   --heart-main-color: #FF0000;
   --heart-sparks-color: var(--heart-main-color);
+  --content-width: clamp(375px, 150px + 60vw, 700px);
 }

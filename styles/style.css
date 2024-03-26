@@ -31,6 +31,7 @@
   background-repeat: no-repeat;
   color: var(--font-color);
   font-family: var(--main-font);
+  font-size: var(--page-fs);
   font-variation-settings: 'wght' var(--font-wght-normal);
 }
 
@@ -56,7 +57,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: min(100%, clamp(375px, 150px + 60vw, 700px));
+  width: var(--content-width);
   padding-block-start: var(--header-padding-block-start);
   padding-block-end: 25px;
   margin-block-end: var(--page-block-padding);
@@ -78,6 +79,7 @@
 }
 
 .theme-menu__list {
+  translate: 10px;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -119,18 +121,16 @@
 }
 
 .content {
-  display: grid;
-  grid-template-columns: 1fr;
-  width: min(100%, clamp(375px, 150px + 60vw, 696px));
-  max-inline-size: 696px;
-  place-items: center;
-  gap: 54px;
+  display: flex;
+  flex-direction: column;
+  width: var(--content-width);
+  gap: var(--list-gap);
 }
 
 .card__list {
   display: flex;
   flex-direction: column;
-  gap: 54px;
+  gap: var(--list-gap)
 }
 
 .card__item {
@@ -171,6 +171,7 @@
 .card__item-title {
   font-variation-settings: 'wght' var(--font-wght-bold);
   padding: 5px 10px;
+  font-size: var(--page-fs);
 }
 
 .card__item-img-wrapper {
@@ -243,24 +244,44 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  gap: var(--card-info-gap);
   padding: var(--card-info-gap);
+}
+
+.card__item-desc,
+.card__item-mesto {
+  line-height: 21px;
+}
+
+.card__item-mesto {
+  margin-top: 27px;
+  margin-bottom: 25px;
 }
 
 .content__save-button {
   width: 85%;
   max-width: 350px;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   padding: 15px 20px;
   gap: 8px;
   justify-content: center;
+  align-self: center;
 }
 
 .content__save-icon {
-  width: 28px;
-  height: 28px;
+  width: 21px;
+  height: 21px;
+}
+
+@media (width <=375px) {
+  .content__save-button {
+    flex-direction: column;
+  }
+
+  .content__save-icon {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 svg {
@@ -287,6 +308,8 @@ svg {
 .dialog__text {
   display: flex;
   align-items: center;
+  text-transform: uppercase;
+  line-height: 150%;
   gap: 30px;
   font-family: var(--decorated-font);
   color: var(--font-color);
