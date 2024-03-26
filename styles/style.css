@@ -68,6 +68,7 @@
 
 .header__logo {
   font-size: var(--logo-fs);
+  text-decoration: none;
 }
 
 .header__text {
