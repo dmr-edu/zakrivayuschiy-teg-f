@@ -111,7 +111,6 @@
   opacity: 0.6;
 }
 
-.theme-menu__button:hover::after,
 .theme-menu__button:focus-visible::after {
   width: 100%;
 }
@@ -188,7 +187,7 @@
   aspect-ratio: 1/1;
 }
 
-.filter-sepia-70 {
+.filter-sepia-light {
   filter: sepia(70%);
 }
 
@@ -204,7 +203,7 @@
   filter: invert(80%);
 }
 
-.filter-sepia-80 {
+.filter-sepia-dark {
   filter: sepia(80%);
 }
 
@@ -241,20 +240,16 @@
 }
 
 .card__item-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   padding: var(--card-info-gap);
 }
 
-.card__item-desc,
-.card__item-mesto {
+.card__item-desc {
   line-height: 21px;
+  margin-block-end: 25px;
 }
 
-.card__item-mesto {
-  margin-top: 27px;
-  margin-bottom: 25px;
+.card__item-desc:last-of-type {
+  margin-block-end: 27px;
 }
 
 .content__save-button {
