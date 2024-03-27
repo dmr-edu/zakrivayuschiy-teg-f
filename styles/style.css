@@ -254,10 +254,10 @@
 
 .content__save-button {
   width: 85%;
-  max-width: 350px;
+  max-width: 335px;
   display: flex;
   align-items: center;
-  padding: 15px 20px;
+  padding: 15px 0;
   gap: 8px;
   justify-content: center;
   align-self: center;
@@ -284,7 +284,7 @@ svg {
 }
 
 .dialog {
-  width: min(90%, 375px);
+  width: min(90%, 353px);
   padding: 30px clamp(30px, 50px - 2vw, 42px);
   background-color: var(--page-bkg);
   border: var(--border)
@@ -305,9 +305,11 @@ svg {
   align-items: center;
   text-transform: uppercase;
   line-height: 150%;
-  gap: 30px;
+  gap: 20px;
   font-family: var(--decorated-font);
   color: var(--font-color);
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .dialog__button {
